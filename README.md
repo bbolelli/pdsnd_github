@@ -7,6 +7,7 @@
 ### Files used: bikeshare.py, washington.csv, new_york_city.csv, chicago.csv
 
 ### Credits:
+https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104
 www.geeksforgeeks.org
 https://Realpython.com
 https://pandas.pydata.org
