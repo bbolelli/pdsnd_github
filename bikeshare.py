@@ -181,15 +181,17 @@ def user_stats(df):
 
 def main():
     while True:
+        #Retrieve user input and load the data from .csv files
         city, month, day = get_filters()
         df = load_data(city, month, day)
-
+        #Preview the raw data to the user.
         view_data(df)
+        #Provide statistics.
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-
+        #Ask the user if they would like to restart the script.
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
