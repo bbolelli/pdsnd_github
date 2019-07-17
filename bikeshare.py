@@ -76,7 +76,7 @@ def load_data(city, month, day):
 def view_data(df):    
     question = input("Would you like to preview the raw data for the city you choose? Yes/No: ").lower()
     x = 0
-    y = 5
+    y = 3
     #Print 5 rows of raw data at a time.
     while question == 'yes':
         question = input("Anser 'yes' to preview 5 rows of data at a time or 'no' to continue the analysis. ")
@@ -84,8 +84,8 @@ def view_data(df):
             break
         else:
             print(df.iloc[x:y])
-            x += 5
-            y += 5
+            x += 3
+            y += 3
 
     print("Let's continue our analysis.")
     print('-'*40)
