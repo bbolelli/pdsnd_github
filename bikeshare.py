@@ -110,6 +110,21 @@ def time_stats(df):
     max_hour = df['Start Hour'].value_counts().idxmax()
     max_hour_value = df['Start Hour'].value_counts().max()
     print("\nThe most common start hour is {} with {} trips, on a 24-hour scale.\n".format(max_hour,max_hour_value))
+
+    #Print the least popular month of travel.
+    min_month = df['Start Month'].value_counts().idxmin()
+    min_month_value = df['Start Month'].value_counts().min()
+    print("\nThe least common month is {} with {} trips.".format(min_month,min_month_value))
+    
+    #Print the least popular day of the week for travel.
+    min_dow = df['Start DoW'].value_counts().idxmin()
+    min_dow_value = df['Start DoW'].value_counts().min()
+    print("\nThe least common day of the week is {} with {} trips.".format(min_dow,min_dow_value))
+    
+    #Print the least popular start hour for travel.
+    min_hour = df['Start Hour'].value_counts().idxmin()
+    min_hour_value = df['Start Hour'].value_counts().min()
+    print("\nThe least common start hour is {} with {} trips, on a 24-hour scale.\n".format(min_hour,min_hour_value))
     
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
