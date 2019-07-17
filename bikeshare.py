@@ -76,7 +76,7 @@ def load_data(city, month, day):
 def view_data(df):    
     question = input("Would you like to preview the raw data for the city you choose? Yes/No: ").lower()
     x = 0
-    y = 5
+    y = 3
     #Print 5 rows of raw data at a time.
     while question == 'yes':
         question = input("Anser 'yes' to preview 5 rows of data at a time or 'no' to continue the analysis. ")
@@ -84,8 +84,8 @@ def view_data(df):
             break
         else:
             print(df.iloc[x:y])
-            x += 5
-            y += 5
+            x += 3
+            y += 3
 
     print("Let's continue our analysis.")
     print('-'*40)
@@ -110,6 +110,21 @@ def time_stats(df):
     max_hour = df['Start Hour'].value_counts().idxmax()
     max_hour_value = df['Start Hour'].value_counts().max()
     print("\nThe most common start hour is {} with {} trips, on a 24-hour scale.\n".format(max_hour,max_hour_value))
+
+    #Print the least popular month of travel.
+    min_month = df['Start Month'].value_counts().idxmin()
+    min_month_value = df['Start Month'].value_counts().min()
+    print("\nThe least common month is {} with {} trips.".format(min_month,min_month_value))
+    
+    #Print the least popular day of the week for travel.
+    min_dow = df['Start DoW'].value_counts().idxmin()
+    min_dow_value = df['Start DoW'].value_counts().min()
+    print("\nThe least common day of the week is {} with {} trips.".format(min_dow,min_dow_value))
+    
+    #Print the least popular start hour for travel.
+    min_hour = df['Start Hour'].value_counts().idxmin()
+    min_hour_value = df['Start Hour'].value_counts().min()
+    print("\nThe least common start hour is {} with {} trips, on a 24-hour scale.\n".format(min_hour,min_hour_value))
     
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
